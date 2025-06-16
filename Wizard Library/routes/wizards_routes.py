@@ -31,3 +31,5 @@ def update_wizard(wizard_id):
 @wizards.route('/wizard/delete/<int:wizard_id>', methods=['DELETE'])
 def delete_wizard(wizard_id):
     return controllers.wizards_controller.delete_wizard(wizard_id)
+
+
