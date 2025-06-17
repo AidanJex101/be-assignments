@@ -3,6 +3,7 @@ import psycopg2
 import os
 
 from db import *
+import routes
 
 from models.wizards import Wizards
 from models.books import  Books
@@ -27,6 +28,12 @@ app.config['SQLALCHEMY_DATABASE_URI'] = f'{database_scheme}{database_user}:{data
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 init_db(app, db)
+
+app.register_blueprint(routes.wizards)
+app.register_blueprint(routes.books)
+app.register_blueprint(routes.magical_schools)
+app.register_blueprint(routes.spells)
+app.register_blueprint(routes.wizard_specializations)
 
 def create_tables():
     with app.app_context():

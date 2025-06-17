@@ -6,8 +6,8 @@ from models.magical_schools import MagicalSchools
 def add_magical_school():
 
     post_data = request.form if request.form else request.json
-    fields = ["school_name", "school_type", "location", "active"]
-    required_fields = ["school_name", "school_type"]
+    fields = ["school_name", "location", "headmaster", "founded_year"]
+    required_fields = ["school_name"]
 
     values = {}
 
@@ -19,9 +19,9 @@ def add_magical_school():
 
     new_school = MagicalSchools(
         school_name=values.get("school_name"),
-        school_type=values.get("school_type"),
+        headmaster=values.get("headmaster"),
         location=values.get('location'),
-        active=values.get('active', True)
+        founded_year=values.get('founded_year')
     )
 
     try:
@@ -36,9 +36,9 @@ def add_magical_school():
     school = {
         "school_id": str(query.school_id), 
         "school_name": query.school_name,
-        "school_type": query.school_type,
+        "headmaster": query.headmaster,
         "location": query.location,
-        "active": query.active
+        "founded_year": query.founded_year
     }
 
     return jsonify({'message': 'Magical school added successfully!', "result": school}), 201

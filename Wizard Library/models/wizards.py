@@ -15,7 +15,7 @@ class Wizards(db.Model):
     magical_power_level = db.Column(db.Integer)
     active = db.Column(db.Boolean, default=True)
 
-    school = db.relationship('MagicalSchools', foreign_keys='[Wizards.school_id]', back_populates='wizards')
+    school = db.relationship('MagicalSchools', back_populates='wizards')
 
     def __init__(self, school_id, wizard_name, house=None, year_enrolled=None, magical_power_level=None, active=True):
         self.school_id = school_id
