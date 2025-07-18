@@ -1,11 +1,11 @@
 from flask import Flask
 import os
 
-from db import *
+from db import init_db, db
 
-from models.app_users import AppUsers
-from models.auth_tokens import AuthToken
-from models.organizations import Organizations
+import models
+
+from util.blueprints import register_blueprints
 
 flask_host = os.environ.get('FLASK_HOST')
 flask_port = os.environ.get('FLASK_PORT')
@@ -23,6 +23,7 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 init_db(app, db)
 
+register_blueprints(app)
 
 def create_tables():
     with app.app_context():

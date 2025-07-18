@@ -1,14 +1,14 @@
 import marshmallow as ma
 import uuid
-import sqlalchemy.dialects.postgresql import uuid
+from sqlalchemy.dialects.postgresql import UUID
 
 from db import db
 
-class AppUsers(db.models):
+class AppUsers(db.Model):
     __tablename__ = "AppUsers"
 
-    user_id = db.Column(uuid(as_uuid=True), primary_key = True, default=uuid.uuid4)
-    ord_id = db.Column(uuid(as_uuid=True), db.ForeignKey('Organizations.org_id'), nullable=False)
+    user_id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    ord_id = db.Column(UUID(as_uuid=True), db.ForeignKey('Organizations.org_id'), nullable=False)
     first_name = db.Column(db.String(), nullable=False)
     last_name = db.Column(db.String(), nullable=False)
     email = db.Column(db.String(), nullable=False, unique=True)
@@ -16,6 +16,9 @@ class AppUsers(db.models):
     phone = db.Column(db.String())
     active = db.Column(db.Boolean(), nullable=False, default=True)
     role = db.Column(db.String(), nullable=False, default='user')
+
+    org = db.relationship('Organizations', back_populates='users')
+    auth = db.relationship('AuthTokens', back_populates='user')
 
     def __init__(self, org_id, first_name, last_name, email, password, phone=None, active=True, role='user'):
         self.ord_id = org_id
@@ -32,9 +35,19 @@ class AppUsers(db.models):
     def new_user_obj():
         return AppUsers("", "", "", "", "", None, True, 'user')
 
-class AppUsersScheme(ma.Scheme):
+class AppUsersScheme(ma.Schema):
     class Meta:
-        fields = ['user_id', 'org_id', 'first_name', 'last_name', 'email', 'phone', 'active', 'role']
+        fields = ['user_id', 'org', 'first_name', 'last_name', 'email', 'phone', 'active', 'role']
+    
+    user_id = ma.fields.UUID()
+    first_name = ma.fields.String(required=True)
+    last_name = ma.fields.String(required=True)
+    email = ma.fields.Email(required=True)
+    phone = ma.fields.String()
+    active = ma.fields.Boolean(required=True, dump_default=True)
+    role = ma.fields.String(required=True, dump_default='user')
+
+    org = ma.fields.Nested('OrganizationsScheme', exclude=['users'])
 
 
 
