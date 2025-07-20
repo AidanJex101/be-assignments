@@ -1,0 +1,942 @@
+{
+	"info": {
+		"_postman_id": "4066f2b2-de53-412b-b1fb-8d429129a3d2",
+		"name": "Fellowship Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40851140"
+	},
+	"item": [
+		{
+			"name": "Abilities",
+			"item": [
+				{
+					"name": "Ability",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hero_id\n",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "ability_name",
+									"value": "Groundpound",
+									"type": "text"
+								},
+								{
+									"key": "power_level",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/ability",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ability by Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hero_id\n",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "ability_name",
+									"value": "Groundpound",
+									"type": "text"
+								},
+								{
+									"key": "power_level",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/ability/{{ability_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ability",
+								"{{ability_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ability by Id Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/ability/{{ability_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ability",
+								"{{ability_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HeroQuest",
+			"item": [
+				{
+					"name": "Associate Hero With Quest",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hero_id",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "quest_id",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/hero-quest",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hero-quest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Hero Quests",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/hero/{{hero_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hero",
+								"{{hero_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hero",
+			"item": [
+				{
+					"name": "Add Hero",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "race_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "hero_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "health_points",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/hero",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hero"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hero by ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "race_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "hero_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "health_points",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "is_alive",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/hero/{{hero_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hero",
+								"{{hero_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hero by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/hero/{{hero_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hero",
+								"{{hero_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Heros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/heros",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"heros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hero by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/hero/{{hero_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hero",
+								"{{hero_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "new location",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "realm_id",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "location_name",
+									"value": "Halulu",
+									"type": "text"
+								},
+								{
+									"key": "danger_level",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/location",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "location by Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "realm_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "location_name",
+									"value": "Gurble",
+									"type": "text"
+								},
+								{
+									"key": "danger_level",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/location/{{location_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"location",
+								"{{location_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "locatio by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/location/{{location_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"location",
+								"{{location_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "locatio by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/location/{{location_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"location",
+								"{{location_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quests",
+			"item": [
+				{
+					"name": "New Quest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "location_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "quest_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "difficulty",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "reward_gold",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/quest",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "quest by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "location_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "quest_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "difficulty",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "reward_gold",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "is_complete",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/quest/{{quest_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quest",
+								"{{quest_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "quest complete by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/quest/{{quest_id}}/complete",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quest",
+								"{{quest_id}}",
+								"complete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "quest by difficulty level",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/quest/{{difficulty_level}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quest",
+								"{{difficulty_level}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "quest by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/quest/{{quest_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quest",
+								"{{quest_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "quest by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/quest/{{quest_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"quest",
+								"{{quest_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Races",
+			"item": [
+				{
+					"name": "New Race",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "race_name\n",
+									"value": "Frogs\n",
+									"type": "text"
+								},
+								{
+									"key": "homeland",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "lifespan",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/race",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"race"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Race by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/race/{{race_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"race",
+								"{{race_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Races",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/races",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"races"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Race by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/race/{{race_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"race",
+								"{{race_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Race by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "race_name\n",
+									"value": "Frogs\n",
+									"type": "text"
+								},
+								{
+									"key": "homeland",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "lifespan",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/race/{{race_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"race",
+								"{{race_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Realms",
+			"item": [
+				{
+					"name": "New Realm",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "realm_name",
+									"value": "Gurgle",
+									"type": "text"
+								},
+								{
+									"key": "ruler\n",
+									"value": "Gargoyle\n",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/realm",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"realm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Realm by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "realm_name",
+									"value": "Gurgle",
+									"type": "text"
+								},
+								{
+									"key": "ruler\n",
+									"value": "Gargoyle\n",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/realm/{{realm_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"realm",
+								"{{realm_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Realm by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/realm/{{realm_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"realm",
+								"{{realm_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Realm by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/realm/{{realm_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"realm",
+								"{{realm_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "ability_id",
+			"value": "ability_id",
+			"type": "default"
+		},
+		{
+			"key": "hero_id",
+			"value": "hero_id",
+			"type": "default"
+		},
+		{
+			"key": "location_id",
+			"value": "location_id",
+			"type": "default"
+		},
+		{
+			"key": "quest_id",
+			"value": "quest_id",
+			"type": "default"
+		},
+		{
+			"key": "difficulty_level",
+			"value": "difficulty_level",
+			"type": "default"
+		},
+		{
+			"key": "race_id",
+			"value": "race_id",
+			"type": "default"
+		},
+		{
+			"key": "realm_id",
+			"value": "realm_id",
+			"type": "default"
+		}
+	]
+}
