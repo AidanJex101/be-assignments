@@ -1,0 +1,1134 @@
+{
+	"info": {
+		"_postman_id": "20b81eb1-b12e-4f3e-90a0-65224572f2bb",
+		"name": "Pokemon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40851140"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "add user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "trainer_id\n",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "first_name\n",
+									"value": "Aidan",
+									"type": "text"
+								},
+								{
+									"key": "last_name\n",
+									"value": "Jex",
+									"type": "text"
+								},
+								{
+									"key": "email\n",
+									"value": "aidanjex@devpipeline.com",
+									"type": "text"
+								},
+								{
+									"key": "password\n",
+									"value": "Gre@n2004",
+									"type": "text"
+								},
+								{
+									"key": "phone\n",
+									"value": "8012058605",
+									"type": "text"
+								},
+								{
+									"key": "active",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "role\n",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/{{user_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth Token",
+			"item": [
+				{
+					"name": "auth user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pokemon",
+			"item": [
+				{
+					"name": "add pokemon",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "stat_id",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "trainer_id",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Pikachu",
+									"type": "text"
+								},
+								{
+									"key": "health",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "xp\n",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "Electric",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/pokemon",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pokemon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get pokemon",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/pokemon",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pokemon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all pokemon",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/pokemon/{{pokemon_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pokemon",
+								"{{pokemon_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update pokemon",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "stat_id",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "trainer_id",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Jiggly Puff",
+									"type": "text"
+								},
+								{
+									"key": "health",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "xp\n",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "Normal",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/pokemon/{{pokemon_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pokemon",
+								"{{pokemon_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete pokemon",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/pokemon/{{pokemon_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pokemon",
+								"{{pokemon_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stats",
+			"item": [
+				{
+					"name": "get all stats",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/stats",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/stats/{{stat_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stats",
+								"{{stat_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add stats",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "attack",
+									"value": null,
+									"type": "text"
+								},
+								{
+									"key": "defence",
+									"value": null,
+									"type": "text"
+								},
+								{
+									"key": "speed",
+									"value": null,
+									"type": "text"
+								},
+								{
+									"key": "special_attack",
+									"value": null,
+									"type": "text"
+								},
+								{
+									"key": "special_defence",
+									"value": null,
+									"type": "text"
+								},
+								{
+									"key": "level",
+									"value": null,
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/stats",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update stats",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "attack",
+									"value": null,
+									"type": "text"
+								},
+								{
+									"key": "defence",
+									"value": null,
+									"type": "text"
+								},
+								{
+									"key": "speed",
+									"value": null,
+									"type": "text"
+								},
+								{
+									"key": "special_attack",
+									"value": null,
+									"type": "text"
+								},
+								{
+									"key": "special_defence",
+									"value": null,
+									"type": "text"
+								},
+								{
+									"key": "level",
+									"value": null,
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/stats/{{stat_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stats",
+								"{{stat_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete stats",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/stats/{{stat_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stats",
+								"{{stat_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trainers",
+			"item": [
+				{
+					"name": "get all trainers",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/trainers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"trainers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get trainer by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/trainers/{{trainer_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"trainers",
+								"{{trainer_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add trainer",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/trainers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"trainers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update trainer",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/trainers/{{trainer_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"trainers",
+								"{{trainer_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete trainer",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/trainers/{{trainer_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"trainers",
+								"{{trainer_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Battles",
+			"item": [
+				{
+					"name": "get all battles",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/battles",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"battles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get battle by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/battles/{{battle_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"battles",
+								"{{battle_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add battle",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "location_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "type_advantage",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/battles",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"battles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update battle",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "location_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "type_advantage",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/battles/{{battle_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"battles",
+								"{{battle_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete battle",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/battles/{{battle_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"battles",
+								"{{battle_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "get all locations",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/locations",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get location by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/locations/{{location_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"locations",
+								"{{location_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update location",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "route",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description\n",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/locations/{{location_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"locations",
+								"{{location_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add location",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "route",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description\n",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/locations/{{location_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"locations",
+								"{{location_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete location",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/locations/{{location_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"locations",
+								"{{location_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PokemonBattle Associate",
+			"item": [
+				{
+					"name": "get all pokemon battles",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/pokemon_battle",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pokemon_battle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get pokemon battle by id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/pokemon_battle/{{pokemon_battle_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pokemon_battle",
+								"{{pokemon_battle_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add pokemon battle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pokemon_id",
+									"value": null
+								},
+								{
+									"key": "battle_id",
+									"value": null
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/pokemon_battle/{{pokemon_battle_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pokemon_battle",
+								"{{pokemon_battle_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update pokemon battle",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pokemon_id",
+									"value": null
+								},
+								{
+									"key": "battle_id",
+									"value": null
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/pokemon_battle/{{pokemon_battle_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pokemon_battle",
+								"{{pokemon_battle_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete pokemon battle",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pokemon_id",
+									"value": null
+								},
+								{
+									"key": "battle_id",
+									"value": null
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/pokemon_battle/{{pokemon_battle_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pokemon_battle",
+								"{{pokemon_battle_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "user_id",
+			"value": "user_id",
+			"type": "default"
+		},
+		{
+			"key": "product_id",
+			"value": "pokemon_id",
+			"type": "default"
+		},
+		{
+			"key": "pokemon_id",
+			"value": "pokemon_id",
+			"type": "default"
+		},
+		{
+			"key": "stat_id",
+			"value": "stat_id",
+			"type": "default"
+		},
+		{
+			"key": "trainer_id",
+			"value": "trainer_id",
+			"type": "default"
+		},
+		{
+			"key": "battle_id",
+			"value": "battle_id",
+			"type": "default"
+		},
+		{
+			"key": "location_id",
+			"value": "location_id",
+			"type": "default"
+		},
+		{
+			"key": "pokemon_battle_id",
+			"value": "pokemon_battle_id",
+			"type": "default"
+		}
+	]
+}

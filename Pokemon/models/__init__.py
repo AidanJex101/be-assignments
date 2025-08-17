@@ -5,4 +5,4 @@ from .stats import Stats
 from .trainer import Trainers
 from .pokemon import Pokemon
 from .location import Locations
-from .pokemon_battle_xref import pokemon_battle_association_table
+from .pokemon_battle_xref import PokemonBattleXref

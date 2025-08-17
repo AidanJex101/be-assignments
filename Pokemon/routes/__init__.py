@@ -5,3 +5,4 @@ from .pokemon_routes import pokemon
 from .battle_routes import battle
 from .location_routes import location
 from .stats_routes import stats
+from .pokemon_battle_routes import PokemonBattle
