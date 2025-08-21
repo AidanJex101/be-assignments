@@ -20,7 +20,7 @@ class Products(db.Model):
     company_id = db.Column(UUID(as_uuid=True), db.ForeignKey("Companies.company_id"), nullable=False)
 
     company = db.relationship("Companies", foreign_keys='[Products.company_id]', back_populates='products')
-    categories = db.relationship("Categories", secondary=products_categories_association_table, back_populates='products')
+    categories = db.relationship("Categories", secondary="products_category_association_table", back_populates='products')
     warranty = db.relationship("Warranties", foreign_keys='[Warranties.product_id]', back_populates='product', uselist=False, cascade='all')
 
     def __init__(self, product_name, description, price, company_id, active=True):
@@ -29,6 +29,15 @@ class Products(db.Model):
         self.price = price
         self.company_id = company_id
         self.active = active
+
+    def new_product_obj():
+        return Products(
+            product_name="",
+            description="",
+            price=0.0,
+            company_id=None,
+            active=True
+        )
 
 class ProductsSchema(ma.Schema):
     class Meta:

@@ -1,9 +1,25 @@
-@company.route('/companies')
-def get_companies():
-    company_query = db.session.query(Companies).all()
+from flask import Blueprint
 
-    if not query:
-        return jsonify({"message": "no companies found"}), 404
+import controllers 
 
-    else:
-      return jsonify({"message": "companies found", "results": companies_schema.dump(query)}), 200
+companies = Blueprint('companies', __name__)
+
+@companies.route('/company', methods=['POST'])
+def create_company():
+    return controllers.create_company()
+
+@companies.route('/company/<company_id>', methods=['GET'])
+def get_company_by_id(company_id):
+    return controllers.get_company_by_id(company_id)
+
+@companies.route('/companies', methods=['GET'])
+def get_all_companies():
+    return controllers.get_all_companies()
+
+@companies.route('/company/<company_id>', methods=['PUT'])
+def update_company_by_id(company_id):
+    return controllers.update_company_by_id(company_id)
+
+@companies.route('/company/<company_id>', methods=['DELETE'])
+def delete_company_by_id(company_id):
+    return controllers.delete_company_by_id(company_id)

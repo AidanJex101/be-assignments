@@ -17,6 +17,10 @@ class Companies(db.Model):
     def __init__(self, company_name):
         self.company_name = company_name
 
+    def new_company_obj():
+        return Companies(
+            company_name=""
+        )
 
 class CompaniesSchema(ma.Schema):
     class Meta:
