@@ -2,6 +2,8 @@ import marshmallow as ma
 import uuid
 from sqlalchemy.dialects.postgresql import UUID
 
+
+
 from db import db
 
 class Courses(db.Model):
@@ -13,6 +15,8 @@ class Courses(db.Model):
     difficulty = db.Column(db.String(50), nullable=False)
     duration_weeks = db.Column(db.Integer, nullable=False)
     max_students = db.Column(db.Integer, nullable=False, default=0)
+
+    instructor = db.relationship('Masters', backpopulates='courses')
 
     def __init__(self, instructor_id, course_name, difficulty, duration_weeks, max_students=0):
         self.instructor_id = instructor_id
@@ -26,7 +30,7 @@ class CoursesSchema(ma.Schema):
         fields = ['course_id', 'instructor_id', 'course_name', 'difficulty', 'duration_weeks', 'max_students']
     
     course_id = ma.fields.UUID()
-    instructor_id = ma.fields.UUID(required=True)
+    instructor_id = ma.fields.Nested('MastersSchema', exclude=['courses'])
     course_name = ma.fields.String(required=True)
     difficulty = ma.fields.String(required=True)
     duration_weeks = ma.fields.Integer(required=True)

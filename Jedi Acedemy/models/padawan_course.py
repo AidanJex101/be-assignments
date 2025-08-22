@@ -12,6 +12,8 @@ class PadawanCourses(db.Model):
     enrollment_date = db.Column(db.DateTime, nullable=False, default=db.func.current_timestamp())
     completion_date = db.Column(db.DateTime, nullable=True)
     final_score = db.Column(db.Float, nullable=True)
+
+    course = db.relationship('Courses', back_populates='padawan_courses')
     
     def __init__(self, padawan_id, course_id, completion_date=None, final_score=None):
         self.padawan_id = padawan_id
@@ -24,7 +26,7 @@ class PadawanCoursesSchema(ma.Schema):
         fields = ['padawan_id', 'course_id', 'enrollment_date', 'completion_date', 'final_score']
     
     padawan_id = ma.fields.UUID(required=True)
-    course_id = ma.fields.UUID(required=True)
+    course_id = ma.fields.Nested('CoursesSchema', exclude=['padawan_courses'])
     enrollment_date = ma.fields.DateTime(required=True)
     completion_date = ma.fields.DateTime(allow_none=True)
     final_score = ma.fields.Float(allow_none=True)

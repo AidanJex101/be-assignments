@@ -1,0 +1,1521 @@
+{
+	"info": {
+		"_postman_id": "61239a2c-e545-4ff4-bc02-ff76fe584700",
+		"name": "Jedi Academy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40851140"
+	},
+	"item": [
+		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "get course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/course/{{course_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"course",
+								"{{course_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/course/{{course_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"course",
+								"{{course_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update course",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "course_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "instructor_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "difficulty",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "duration_weeks",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "max_students",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/course/{{course_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"course",
+								"{{course_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "instructor_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "difficulty",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "duration_weeks",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "max_students",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/course",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"course"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Crystals",
+			"item": [
+				{
+					"name": "get crystal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/crystal/{{crystal_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"crystal",
+								"{{crystal_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get crystals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/crystals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"crystals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete crystals",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/crystal/{{crystal_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"crystal",
+								"{{crystal_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update crystal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "crystal_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "crystal_type",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "origin_planet",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "rarity_level",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "force_amplify",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/crystal/{{crystal_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"crystal",
+								"{{crystal_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add crystal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "crystal_type",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "origin_planet",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "rarity_level",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "force_amplify",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/crystal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"crystal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lightsabers",
+			"item": [
+				{
+					"name": "get lightsaber",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/lightsaber/{{lightsaber_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lightsaber",
+								"{{lightsaber_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get lightsabers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/lightsabers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lightsabers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete lightsaber",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/lightsaber/{{lightsaber_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lightsaber",
+								"{{lightsaber_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update lightsaber",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "saber_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "owner_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "crystal_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "saber_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "hilt_material",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "blade_color",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "is_complete",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/lightsaber/{{lightsaber_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lightsaber",
+								"{{lightsaber_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add lightsaber",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "owner_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "crystal_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "saber_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "hilt_material",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "blade_color",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "is_complete",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/lightsaber",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"lightsaber"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Masters",
+			"item": [
+				{
+					"name": "get master",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/master/{{master_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"master",
+								"{{master_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get masters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/masters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"masters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete master",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/master/{{master_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"master",
+								"{{master_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update master",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "master_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "master_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "specialization",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "years_training",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "max_padawans",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/master/{{master_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"master",
+								"{{master_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add master",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "master_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "specialization",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "years_training",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "max_padawans",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/master",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"master"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Padawan Courses",
+			"item": [
+				{
+					"name": "get padawan course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/padawan_course/{{padawan_course_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"padawan_course",
+								"{{padawan_course_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get padawan courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/padawan_courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"padawan_courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete padawan course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/padawan_course/{{padawan_course_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"padawan_course",
+								"{{padawan_course_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update padawan course",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "padawan_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "course_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "enrollment_date",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "completion_date",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "final_score",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/padawan_course/{{padawan_course_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"padawan_course",
+								"{{padawan_course_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add padawan course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "course_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "enrollment_date",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "completion_date",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "final_score",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/padawan_course",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"padawan_course"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Padawans",
+			"item": [
+				{
+					"name": "get padawan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/padawan/{{padawan_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"padawan",
+								"{{padawan_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get padawans",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/padawans",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"padawans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete padawan",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/padawan/{{padawan_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"padawan",
+								"{{padawan_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update padawan",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "padawan_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "master_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "species_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "padawan_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "training_level",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "is_active",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/padawan/{{padawan_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"padawan",
+								"{{padawan_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add padawan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "master_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "species_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "padawan_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "training_level",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "is_active",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/padawan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"padawan"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth Token",
+			"item": [
+				{
+					"name": "auth user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "add user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "trainer_id\n",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "first_name\n",
+									"value": "Aidan",
+									"type": "text"
+								},
+								{
+									"key": "last_name\n",
+									"value": "Jex",
+									"type": "text"
+								},
+								{
+									"key": "email\n",
+									"value": "aidanjex@devpipeline.com",
+									"type": "text"
+								},
+								{
+									"key": "password\n",
+									"value": "Gre@n2004",
+									"type": "text"
+								},
+								{
+									"key": "phone\n",
+									"value": "8012058605",
+									"type": "text"
+								},
+								{
+									"key": "active",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "role\n",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/{{user_id}}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Species",
+			"item": [
+				{
+					"name": "get species",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/species/{{species_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"species",
+								"{{species_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all species",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/species",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"species"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete species",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/species/{{species_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"species",
+								"{{species_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update species",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "species_id",
+									"value": null,
+									"type": "text"
+								},
+								{
+									"key": "species_name",
+									"value": null,
+									"type": "text"
+								},
+								{
+									"key": "homeworld",
+									"value": null,
+									"type": "text"
+								},
+								{
+									"key": "force_sensitive",
+									"value": null,
+									"type": "text"
+								},
+								{
+									"key": "avg_lifespan",
+									"value": null,
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/species/{{species_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"species",
+								"{{species_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add species",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "species_name",
+									"value": null,
+									"type": "text"
+								},
+								{
+									"key": "homeworld",
+									"value": null,
+									"type": "text"
+								},
+								{
+									"key": "force_sensitive",
+									"value": null,
+									"type": "text"
+								},
+								{
+									"key": "avg_lifespan",
+									"value": null,
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/species",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"species"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Temples",
+			"item": [
+				{
+					"name": "get temple",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/temple/{{temple_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"temple",
+								"{{temple_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get temples",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/temples",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"temples"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete temple",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/temple/{{temple_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"temple",
+								"{{temple_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update temple",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "temple_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "temple_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "planet",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "master_count",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "padawan_limit",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "is_active",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/temple/{{temple_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"temple",
+								"{{temple_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add temple",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "temple_name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "planet",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "master_count",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "padawan_limit",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "is_active",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/temple",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"temple"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "course_id",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "crystal_id",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "lightsaber_id",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "master_id",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "padawan_course_id",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "padawan_id",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "species_id",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "temple_id",
+			"value": "",
+			"type": "default"
+		}
+	]
+}

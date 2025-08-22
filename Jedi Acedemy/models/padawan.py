@@ -16,6 +16,10 @@ class Padawans(db.Model):
     training_level = db.Column(db.Integer(), nullable=False)
     is_active = db.Column(db.Boolean, nullable=False, default=True)
 
+    master = db.relationship('Masters', back_populates='padawans')
+    user = db.relationship('AppUsers', back_populates='padawans')
+    species = db.relationship('Species', back_populates='padawans')
+
     def __init__(self, master_id, user_id, species_id, padawan_name, age, training_level, is_active=True):
         self.master_id = master_id
         self.user_id = user_id
@@ -30,9 +34,9 @@ class PadawansSchema(ma.Schema):
         fields = ['padawan_id', 'master_id', 'user_id', 'species_id', 'padawan_name', 'age', 'training_level', 'is_active']
     
     padawan_id = ma.fields.UUID()
-    master_id = ma.fields.UUID(required=True)
-    user_id = ma.fields.UUID(required=True)
-    species_id = ma.fields.UUID(required=True)
+    master_id = ma.fields.Nested('MastersSchema', exclude=['padawans'])
+    user_id = ma.fields.Nested('AppUsersSchema', exclude=['padawans'])
+    species_id = ma.fields.Nested('SpeciesSchema', exclude=['padawans'])
     padawan_name = ma.fields.String(required=True)
     age = ma.fields.Integer(required=True)
     training_level = ma.fields.Integer(required=True, default=0)

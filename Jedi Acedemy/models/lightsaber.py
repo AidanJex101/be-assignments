@@ -15,6 +15,10 @@ class Lightsabers(db.Model):
     blade_color = db.Column(db.String(50), nullable=False)
     is_complete = db.Column(db.Boolean, nullable=False, default=True)
 
+
+    owner = db.relationship('Padawans', backpopulates='lightsabers')
+    crystal = db.relationship('Crystals', back_populates='lightsabers')
+
     def __init__(self, owner_id, crystal_id, saber_name, hilt_material, blade_color, is_complete=True):
         self.owner_id = owner_id
         self.crystal_id = crystal_id
@@ -28,8 +32,8 @@ class LightsabersSchema(ma.Schema):
         fields = ['saber_id', 'owner_id', 'crystal_id', 'saber_name', 'hilt_material', 'blade_color', 'is_complete']
     
     saber_id = ma.fields.UUID()
-    owner_id = ma.fields.UUID(required=True)
-    crystal_id = ma.fields.UUID(required=True)
+    owner_id = ma.fields.Nested('PadawansSchema', exclude=['lightsabers'])
+    crystal_id = ma.fields.Nested('CrystalsSchema', exclude=['lightsabers'])
     saber_name = ma.fields.String(required=True)
     hilt_material = ma.fields.String(required=True)
     blade_color = ma.fields.String(required=True)
