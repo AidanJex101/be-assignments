@@ -12,6 +12,8 @@ class Battles(db.Model):
     type_advantage = db.Column(db.String(), nullable=False)
     description = db.Column(db.String(), nullable=True)
 
+    lacation = db.relationship('Locations', backpopulates='battles')
+
     def __init__(self, location_id, type_advantage, description=None):
         self.location_id = location_id
         self.type_advantage = type_advantage
@@ -25,7 +27,7 @@ class BattlesSchema(ma.Schema):
         fields = ['battle_id', 'location_id', 'type_advantage', 'description']
 
     battle_id = ma.fields.UUID()
-    location_id = ma.fields.UUID(required=True)
+    location_id = ma.fields.Nested('LocationsSchema', only=['location_id'], dump_only=True)
     type_advantage = ma.fields.String(required=True)
     description = ma.fields.String()
 

@@ -7,9 +7,14 @@ from models.trainer import Trainers
 from util.reflection import populate_object
 from lib.authenticate import authenticate_return_auth, authenticate 
 
-
+@authenticate_return_auth
 def add_user():
-    post_data = request.form if request.form else request.get_json()
+
+    auth_info = request.auth_info
+    if auth_info.user.role != "superadmin":
+        return jsonify({"Message": "Unauthorized"}), 401
+
+    post_data = request.form if request.form else request.json
     
     trainer_id = post_data.get('trainer_id')
 
@@ -27,8 +32,12 @@ def add_user():
     return jsonify({"Message": "User Added", "result": user_schema.dump(new_user)}), 201
 
 
-@authenticate
+@authenticate_return_auth
 def get_all_users():
+
+    auth_info = request.auth_info
+    if auth_info.user.role != "superadmin":
+        return jsonify({"Message": "Unauthorized"}), 401
 
     users_query = db.session.query(Users).all()
 

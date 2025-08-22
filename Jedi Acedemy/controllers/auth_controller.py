@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 
 from db import db
 from models.auth_tokens import AuthTokens, auth_token_schema
-from models.app_users import AppUsers
+from models.users import AppUsers
 
 def auth_token_add():
     post_data = request.form if request.form else request.get_json()

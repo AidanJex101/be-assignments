@@ -2,8 +2,7 @@ from flask import jsonify, request
 from flask_bcrypt import generate_password_hash
 
 from db import db
-from models.app_users import AppUsers, app_users_schema, app_user_schema
-from models.organizations import Organizations
+from models.users import AppUsers, app_users_schema, app_user_schema
 from util.reflection import populate_object
 from lib.authenticate import authenticate_return_auth, authenticate 
 

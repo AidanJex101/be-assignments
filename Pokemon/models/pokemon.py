@@ -15,6 +15,9 @@ class Pokemon(db.Model):
     xp = db.Column(db.Integer, nullable=False)
     type = db.Column(db.String(), nullable=False)
 
+    stats = db.relationship('Stats', backpopulates='pokemons')
+    trainer = db.relationship('Trainers', backpopulates='pokemons')
+
     def __init__(self, stats_id, trainer_id, name, health, xp, type):
         self.stats_id = stats_id
         self.trainer_id = trainer_id
@@ -31,8 +34,8 @@ class PokemonSchema(ma.Schema):
         fields = ['pokemon_id', 'stat_id', 'trainer_id', 'name', 'health', 'xp', 'type']
 
     pokemon_id = ma.fields.UUID()
-    stat_id = ma.fields.UUID(required=True)
-    trainer_id = ma.fields.UUID(required=True)
+    stat_id = ma.fields.Nested('StatsSchema', only=['stat_id'], dump_only=True)
+    trainer_id = ma.fields.Nested('TrainersSchema', only=['trainer_id'], dump_only=True)
     name = ma.fields.String(required=True)
     health = ma.fields.Integer(required=True)
     xp = ma.fields.Integer(required=True)

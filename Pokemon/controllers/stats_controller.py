@@ -5,8 +5,14 @@ from util.reflection import populate_object
 from lib.authenticate import authenticate_return_auth
 
 
+@authenticate_return_auth
 def add_stat():
-    post_data = request.form if request.form else request.get_json()
+
+    auth_info = request.auth_info
+    if auth_info.user.role != "superadmin":
+        return jsonify({"Message": "Unauthorized"}), 401
+
+    post_data = request.form if request.form else request.json
     stat = Stats.new_stat_obj()
     populate_object(stat, post_data)
     db.session.add(stat)
@@ -20,16 +26,30 @@ def get_all_stats(auth_info):
         return jsonify({"Message": "Stats Found", "result": stats_schema.dump(stats_query)}), 200
     else:
         return jsonify({"Message": "Unauthorized"}), 401
-    
+
+
+@authenticate_return_auth
 def get_stat_by_id(stat_id):
+
+    auth_info = request.auth_info
+    if auth_info.user.role != "superadmin":
+        return jsonify({"Message": "Unauthorized"}), 401
+
     stat = db.session.query(Stats).filter(Stats.id == stat_id).first()
     if stat:
         return jsonify({"Message": "Stat Found", "result": stat_schema.dump(stat)}), 200
     else:
         return jsonify({"Message": "Stat Not Found"}), 404
-    
+
+
+@authenticate_return_auth
 def update_stat(stat_id):
-    post_data = request.form if request.form else request.get_json()
+
+    auth_info = request.auth_info
+    if auth_info.user.role != "superadmin":
+        return jsonify({"Message": "Unauthorized"}), 401
+
+    post_data = request.form if request.form else request.json
     stat = db.session.query(Stats).filter(Stats.id == stat_id).first()
     if not stat:
         return jsonify({"Message": "Stat Not Found"}), 404
@@ -37,7 +57,14 @@ def update_stat(stat_id):
     db.session.commit()
     return jsonify({"Message": "Stat Updated", "result": stat_schema.dump(stat)}), 200
 
+
+@authenticate_return_auth
 def delete_stat(stat_id):
+
+    auth_info = request.auth_info
+    if auth_info.user.role != "superadmin":
+        return jsonify({"Message": "Unauthorized"}), 401
+
     stat = db.session.query(Stats).filter(Stats.id == stat_id).first()
     if not stat:
         return jsonify({"Message": "Stat Not Found"}), 404
